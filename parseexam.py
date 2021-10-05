@@ -18,7 +18,7 @@ for case in root.iter('cases'):
     
 for death in root.iter('deaths'):
     deaths.append(death.text)
-
-df = pd.DataFrame(columns= [date_rep,country,cases,deaths])
+data = {"dateRep":date_rep,"countriesAndTerritories":country,"number_of_cases":cases,"number_of_deaths":deaths}
+df = pd.DataFrame(data)
 
 df.to_csv('exam.csv')
